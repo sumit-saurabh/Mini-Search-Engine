@@ -1,0 +1,123 @@
+String variables as pointers
+In C a string variable is defined to be simply a pointer to the beginning
+of a string -this will take some explaining. You will notice that first we
+assign a string constant to the string variable named strg so we will
+have some data to work with. Next, we assign the value of the first
+element to the variable one, a simple char variable. Next, since the
+string name is a pointer by definition, we can assign the same value to
+two by using the star and the string name. The result of the two
+assignments are such that one now has the same value as two, and both
+contain the character ‘T’, the first character in the string. Note that it
+would be incorrect to write the ninth line as two = *strg[0]; because the
+star takes the place of the square brackets.
+For all practical purposes, strg is a pointer. It does, however, have one
+restriction that a true pointer does not have. It cannot be changed like a
+variable, but must always contain the initial value and therefore always
+points to its string. It could be thought of as a pointer constant, and in
+some applications you may desire a pointer that cannot be corrupted in
+any way. Even though it cannot be changed, it can be used to refer to
+other values than the one it is defined to point to, as we will see in the
+next section of the program.
+Moving ahead to line 9, the variable one is assigned the value of the
+ninth variable (since the indexing starts at zero) and two is assigned the
+same value because we are allowed to index a pointer to get to values
+farther ahead in the string. Both variables now contain the character ‘ a ’.
+The C compiler takes care of indexing for us by automatically adjusting
+the indexing for the type of variable the pointer is pointing to.(This is
+why the data type of a variable must be declared before the variable is
+used.) In this case, the index of 8 is simply added to the pointer value
+before looking up the desired result because a char type variable is one
+byte long. If we were using a pointer to an int type variable, the index
+would be doubled and added to the pointer before looking up the value
+because an int type variable uses two bytes per value stored. When we
+get to the section on structures, we will see that a variable can have
+many, even into the hundreds or thousands, of bytes per variable, but
+the indexing will be handled automatically for us by the system.
+Since there is already a pointer, it can be assigned the address of the
+eleventh element of strg by the statement in line 12 of the program.
+Remember that since there is a true pointer, it can be assigned any value
+as long as that value represents a char type of address. It should be
+clear that the pointers must be typed in order to allow the pointer
+arithmetic described in the last paragraph to be done properly. The third
+and fourth outputs will be the same, namely the letter ‘c’.
+Module 815 Data Structures Using C
+Page 813-16
+Pointer arithmetic
+Not all forms of arithmetic are permissible on a pointer: only those
+things that make sense. Considering that a pointer is an address
+somewhere in the computer, it would make sense to add a constant to
+an address, thereby moving it ahead in memory that number of places.
+Similarly, subtraction is permissible, moving it back some number of
+locations. Adding two pointers together would not make sense because
+absolute memory addresses are not additive. Pointer multiplication is
+also not allowed, as that would be a ‘funny’ number. If you think about
+what you are actually doing, it will make sense to you what is allowed,
+and what is not.
+Integer pointers
+The array named list is assigned a series of values from 100 to 199 in
+order to have some data to work with. Next we assign the pointer pt
+the address of the 28th element of the list and print out the same value
+both ways to illustrate that the system truly will adjust the index for the
+int type variable. You should spend some time in this program until you
+feel you fairly well understand these lessons on pointers.String variables as pointers
+In C a string variable is defined to be simply a pointer to the beginning
+of a string -this will take some explaining. You will notice that first we
+assign a string constant to the string variable named strg so we will
+have some data to work with. Next, we assign the value of the first
+element to the variable one, a simple char variable. Next, since the
+string name is a pointer by definition, we can assign the same value to
+two by using the star and the string name. The result of the two
+assignments are such that one now has the same value as two, and both
+contain the character ‘T’, the first character in the string. Note that it
+would be incorrect to write the ninth line as two = *strg[0]; because the
+star takes the place of the square brackets.
+For all practical purposes, strg is a pointer. It does, however, have one
+restriction that a true pointer does not have. It cannot be changed like a
+variable, but must always contain the initial value and therefore always
+points to its string. It could be thought of as a pointer constant, and in
+some applications you may desire a pointer that cannot be corrupted in
+any way. Even though it cannot be changed, it can be used to refer to
+other values than the one it is defined to point to, as we will see in the
+next section of the program.
+Moving ahead to line 9, the variable one is assigned the value of the
+ninth variable (since the indexing starts at zero) and two is assigned the
+same value because we are allowed to index a pointer to get to values
+farther ahead in the string. Both variables now contain the character ‘ a ’.
+The C compiler takes care of indexing for us by automatically adjusting
+the indexing for the type of variable the pointer is pointing to.(This is
+why the data type of a variable must be declared before the variable is
+used.) In this case, the index of 8 is simply added to the pointer value
+before looking up the desired result because a char type variable is one
+byte long. If we were using a pointer to an int type variable, the index
+would be doubled and added to the pointer before looking up the value
+because an int type variable uses two bytes per value stored. When we
+get to the section on structures, we will see that a variable can have
+many, even into the hundreds or thousands, of bytes per variable, but
+the indexing will be handled automatically for us by the system.
+Since there is already a pointer, it can be assigned the address of the
+eleventh element of strg by the statement in line 12 of the program.
+Remember that since there is a true pointer, it can be assigned any value
+as long as that value represents a char type of address. It should be
+clear that the pointers must be typed in order to allow the pointer
+arithmetic described in the last paragraph to be done properly. The third
+and fourth outputs will be the same, namely the letter ‘c’.
+Module 815 Data Structures Using C
+Page 813-16
+Pointer arithmetic
+Not all forms of arithmetic are permissible on a pointer: only those
+things that make sense. Considering that a pointer is an address
+somewhere in the computer, it would make sense to add a constant to
+an address, thereby moving it ahead in memory that number of places.
+Similarly, subtraction is permissible, moving it back some number of
+locations. Adding two pointers together would not make sense because
+absolute memory addresses are not additive. Pointer multiplication is
+also not allowed, as that would be a ‘funny’ number. If you think about
+what you are actually doing, it will make sense to you what is allowed,
+and what is not.
+Integer pointers
+The array named list is assigned a series of values from 100 to 199 in
+order to have some data to work with. Next we assign the pointer pt
+the address of the 28th element of the list and print out the same value
+both ways to illustrate that the system truly will adjust the index for the
+int type variable. You should spend some time in this program until you
+feel you fairly well understand these lessons on pointers.
