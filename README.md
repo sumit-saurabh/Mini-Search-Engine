@@ -17,3 +17,4 @@ Steps:
 5. Start searching the key from the database
 6. You can create your own database. Just change the content of database not the name
 7. Press Crtl+s for various settings
+8. To apply setting, just press the leading index number of respective setting.
