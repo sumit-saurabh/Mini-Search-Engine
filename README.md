@@ -1,6 +1,8 @@
 Mini-Search-Engine
 ==================
-Author: Sumit Saurabh
+Language: C
+Created on: 09/01/2013
+Developer: Sumit Saurabh
 --------------------------
 
 Mini Search Engine is an interesting C project. 
